@@ -1,20 +1,26 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  components: {
-  }
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style lang="scss">
 @import "./style/common.scss";
+
+.router-fade-enter-active,
+.router-fade-live-active {
+  transition: opacity 0.3s;
+}
+
+.router-fade-enter,
+.router-fade-leave-active {
+  opacity: 0;
+}
 </style>

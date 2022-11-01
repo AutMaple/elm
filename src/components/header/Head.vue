@@ -1,8 +1,8 @@
 <template>
-  <header id="head_top">
+  <header id="head-top">
     <slot name="logo"></slot>
     <slot name="search"></slot>
-    <section class="head_goback" v-if="goBack" @click="$router.go(-1)">
+    <section class="head-go-back" v-if="goBack" @click="$router.go(-1)">
       <svg
         width="100%"
         height="100%"
@@ -17,23 +17,23 @@
     </section>
     <router-link
       :to="userInfo ? '/profile' : '/login'"
-      v-if="signinUp"
-      class="head_login"
+      v-if="signInUp"
+      class="head-login"
     >
-      <svg class="user_avatar" v-if="userInfo">
+      <svg class="user-avatar" v-if="userInfo">
         <use
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xlink:href="#user"
         ></use>
       </svg>
-      <span class="login_span" v-else>登录 | 注册</span>
+      <span class="login-span" v-else>登录 | 注册</span>
     </router-link>
-    <section class="title_head ellipsis" v-if="headTitle">
-      <span class="title_text">{{ headTitle }}</span>
+    <section class="title-head ellipsis" v-if="headTitle">
+      <span class="title-text">{{ headTitle }}</span>
     </section>
     <slot name="edit"></slot>
-    <slot name="msite-title"></slot>
-    <slot name="changecity"></slot>
+    <slot name="siteTitle"></slot>
+    <slot name="changeCity"></slot>
     <slot name="changeLogin"></slot>
   </header>
 </template>
@@ -46,7 +46,7 @@ export default {
   mounted() {
     this.getUserInfo();
   },
-  props: ["signinUp", "headTitle", "goBack"],
+  props: ["signInUp", "headTitle", "goBack"],
   computed: {
     userInfo() {
       return this.$store.state.userInfo;
@@ -61,9 +61,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../style/mixin.scss";
+@import "@/style/mixin.scss";
 
-#head_top {
+#head-top {
   background-color: $blue;
   position: fixed;
   z-index: 100;
@@ -72,37 +72,38 @@ export default {
   @include wh(100%, 1.95rem);
 }
 
-.head_hoback{
-    left: 0.4rem;
-    @include wh(0.6rem, 1rem);
-    line-height: 2.2rem;
-    margin-left: 0.5rem;
+.head-go-back {
+  left: 0.4rem;
+  @include wh(0.6rem, 1rem);
+  line-height: 2.2rem;
+  margin-left: 0.5rem;
 }
 
-.head_login{
-    right: 0.55rem;
-    @include sc(0.65rem, #fff);
-    @include ct;
+.head-login {
+  right: 0.55rem;
+  @include sc(0.65rem, #fff);
+  @include ct;
 
-    .login_span {
-        color: #fff;
-    }
-    .user_avatar {
-        fill: #fff;
-        @include wh(0.8rem, 0.8rem);
-    }
-}
-
-.title_head {
-    @include center;
-    width: 50%;
+  .login-span {
     color: #fff;
-    text-align: cneter;
+  }
 
-    .title_text {
-        @include sc(0.8rem, #fff);
-        text-align: center;
-        font-weight: bold;
-    }
+  .user-avatar {
+    fill: #fff;
+    @include wh(0.8rem, 0.8rem);
+  }
+}
+
+.title-head {
+  @include center;
+  width: 50%;
+  color: #fff;
+  text-align: center;
+
+  .title-text {
+    @include sc(0.8rem, #fff);
+    text-align: center;
+    font-weight: bold;
+  }
 }
 </style>

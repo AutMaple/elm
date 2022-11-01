@@ -1,19 +1,18 @@
-import vue from "vue"
-import VueRouter from "vue-router"
-import Home from "../pages/Home"
-import About from "../pages/About"
+import vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../pages/Home";
 
 vue.use(VueRouter);
 
 export default new VueRouter({
-    routes:[
-        {
-            path: '/',
-            component: Home
-        },
-        {
-            path: "/about",
-            component: About
-        }
-    ]
-})
+  routes: [
+    {
+      path: "",
+      redirect: "/home",
+    },
+    {
+      path: "/home",
+      component: Home,
+    },
+  ],
+});
