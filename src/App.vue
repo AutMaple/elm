@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,5 +15,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./style/common.scss";
 </style>
