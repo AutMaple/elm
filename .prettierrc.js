@@ -1,6 +1,6 @@
 module.exports = {
   tabWidth: 2,
-  printWidth: 80, // 单行长度80
+  printWidth: 100, // 单行长度80
   useTabs: false, // 使用空格代替 tab
   semi: true, // 句末使用分号
   singleQuote: false, // 使用双引号

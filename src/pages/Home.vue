@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeadTop>
+    <HeadTop :sign-in-up="true">
       <span slot="logo" class="head-logo" @click="reload"> ele.me</span>
     </HeadTop>
     <nav class="city-nav">
@@ -11,33 +11,21 @@
       <router-link :to="'/city/' + guessCityId" class="guess-city">
         <span>{{ guessCity }}</span>
         <svg class="arrow-right">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="#arrow-right"
-          ></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
         </svg>
       </router-link>
     </nav>
     <section id="hot-city-container">
       <h4 class="city-title">热门城市</h4>
       <ul class="city-list-ul clear">
-        <router-link
-          tag="li"
-          v-for="item in hotCity"
-          :to="'/city/' + item.id"
-          :key="item.id"
-        >
+        <router-link tag="li" v-for="item in hotCity" :to="'/city/' + item.id" :key="item.id">
           {{ item.name }}
         </router-link>
       </ul>
     </section>
     <section class="group-city-container">
       <ul class="letter-classify">
-        <li
-          v-for="(value, key, index) in sortedGroupCity"
-          :key="key"
-          class="letter-classify-li"
-        >
+        <li v-for="(value, key, index) in sortedGroupCity" :key="key" class="letter-classify-li">
           <h4 class="city-title">
             {{ key }}
             <span v-if="index === 0">(按字母排序)</span>
@@ -80,8 +68,7 @@ export default {
       let sortObj = {};
       for (let i = 65; i <= 90; i++) {
         if (this.groupCity[String.fromCharCode(i)]) {
-          sortObj[String.fromCharCode(i)] =
-            this.groupCity[String.fromCharCode(i)];
+          sortObj[String.fromCharCode(i)] = this.groupCity[String.fromCharCode(i)];
         }
       }
       return sortObj;
@@ -147,6 +134,7 @@ export default {
     height: 1.8rem;
     padding: 0 0.45rem;
     border-top: 1px solid $bc;
+    border-bottom: 2px solid $bc;
     @include font(0.75rem, 1.8rem);
 
     span:nth-of-type(1) {

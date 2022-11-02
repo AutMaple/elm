@@ -1,6 +1,7 @@
 import vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../pages/Home";
+import Home from "@/pages/Home";
+import City from "@/pages/City";
 
 vue.use(VueRouter);
 
@@ -13,6 +14,10 @@ export default new VueRouter({
     {
       path: "/home",
       component: Home,
+    },
+    {
+      path: "/city/:cityId",
+      component: City,
     },
   ],
 });
