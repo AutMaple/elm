@@ -15,7 +15,8 @@ export const hotCity = () => axios.get(baseUrl + "/v1/cities?type=hot");
 
 export const groupCity = () => axios.get(baseUrl + "/v1/cities?type=group");
 
-export const currentCity = (cityId) => axios.get(baseUrl + "/v1/cities/" + cityId);
+export const currentCity = (cityId) =>
+  axios.get(baseUrl + "/v1/cities/" + cityId);
 
 export const getLocalStorage = (key) => {
   if (!key) return;

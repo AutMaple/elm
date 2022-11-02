@@ -1,9 +1,8 @@
-import {getUser} from "../services/pullData";
-
+import { getUser } from "../services/pullData";
 
 export default {
-  async getUserInfo({commit}) {
+  async getUserInfo({ commit }) {
     let res = await getUser();
-    commit('userInfo', res);
+    commit("userInfo", res);
   },
 };

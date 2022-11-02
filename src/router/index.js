@@ -19,5 +19,8 @@ export default new VueRouter({
       path: "/city/:cityId",
       component: City,
     },
+    {
+      path: "/site",
+    },
   ],
 });
