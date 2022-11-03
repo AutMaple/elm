@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/pages/Home";
 import City from "@/pages/City";
 import Site from "@/pages/Site";
+import Food from "@/pages/Food";
 
 vue.use(VueRouter);
 
