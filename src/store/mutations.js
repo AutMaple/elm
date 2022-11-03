@@ -4,8 +4,17 @@ export default {
     if (!state.login)
       // 没有登录过直接返回
       return;
-    if (data.message == null)
+    if (data.message == null) {
       // 如果返回来的数据中没有 message，说明获取数据成功
       state.userInfo = data;
+    }
+  },
+  saveGeohash(state, geohash) {
+    state.geohash = geohash;
+  },
+
+  recordAddress(state, { latitude, longitude }) {
+    state.latitude = latitude;
+    state.longitude = longitude;
   },
 };
