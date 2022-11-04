@@ -25,5 +25,9 @@ export default new VueRouter({
       path: "/site",
       component: Site,
     },
+    {
+      path: "/food",
+      component: Food
+    }
   ],
 });

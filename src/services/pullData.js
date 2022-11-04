@@ -1,4 +1,5 @@
 import axios from "axios";
+import { last } from "eslint-plugin-vue/lib/utils/indent-utils";
 
 const baseUrl = "https://elm.cangdu.org";
 
@@ -94,3 +95,29 @@ export const shopList = (
     params: data,
   });
 };
+
+export const foodCategory = (latitude, longitude) =>
+  axios.get(baseUrl + "/shopping/v2/restaurant/category", {
+    params: {
+      latitude,
+      longitude,
+    },
+  });
+
+export const foodDelivery = (latitude, longitude) =>
+  axios.get(baseUrl + "/shopping/v1/restaurants/delivery_modes", {
+    params: {
+      latitude,
+      longitude,
+      kw: "",
+    },
+  });
+
+export const foodActivity = (latitude, longitude) =>
+  axios.get(baseUrl + "/shopping/v1/restaurants/activity_attributes", {
+    params: {
+      latitude,
+      longitude,
+      kw: "",
+    },
+  });
